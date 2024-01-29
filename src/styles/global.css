@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 100%;
+  font-family: "Hanken Grotesk", sans-serif !important ;
+}
+
+li {
+  list-style: none;
+}
+
+
+/* --------------scrollbar------------ */
+
+::-webkit-scrollbar{
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track{
+  background-color: var(--white);
+}
+::-webkit-scrollbar-thumb{
+  background-color:rgb(141, 141, 141) ;
+  border-radius: 1rem;
+  border: .1px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: rgb(105, 104, 104);
+}
+
+
+
+.backgroundcolor {
+  background: linear-gradient(
+      180deg,
+      hsla(0, 0%, 100%, 0.3),
+      hsla(0, 0%, 100%, 0.3)
+    ),
+    linear-gradient(90deg, #6639eb 0, #d391a9 56%, #fc796a 76%, #ff4c4b);
+  color: transparent;
+  -webkit-background-clip: text;
+  text-shadow: 0 0 60px red;
+  animation: anime 1s infinite alternate;
+}
+
+@keyframes anime {
+  100% {
+    text-shadow: 0 0 60px blue;
+  }
+}
+
+/* Navbar  */
+.nav-sticky {
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+  top: 0;
+  background-color: white;
+  color: black;
+}
+
+.button-sticky {
+  background-color: black;
+  color: white;
+}
+
+.navmanagement-sticky {
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+  top: 10%;
+  padding: 1rem;
+  color: white;
+}
+
+/* Tooltip  */
+.tooltipbox {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent #1f1f1f transparent;
+}
+
+.tooltipbox:hover .tooltip {
+  opacity: 1;
+  z-index: 2;
+}
+
+.tooltipbox:hover {
+  z-index: 1 !important;
+}
