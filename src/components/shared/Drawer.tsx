@@ -81,7 +81,7 @@ const Drawer = ({ open, setOpen, setHovered }: DrawerProps) => {
                     </div>
                 </div>
 
-                <div className='flex flex-col gap-4 h-[100%] pt-[3rem] md:px-[2rem]' >
+                <div className='flex flex-col gap-4 h-[100%] pt-[3rem] md:px-[2rem] pl-[2rem]' >
                     {NavbarList.map((elem, index) => (
                         <React.Fragment key={index}>
                             {elem.submenu ? (

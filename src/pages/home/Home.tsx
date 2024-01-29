@@ -21,8 +21,8 @@ const Home = () => {
       <Header islandingpage={true} />
 
       {/* Trusted Partner  */}
-      <section className="bg-backgroundcolor px-[10px]  lg:px-[60px] py-[30px] pb-[40px] ">
-        <div className="px-[60px] flex flex-col lg:flex-row w-[100%] gap-4 ">
+      <section className="bg-backgroundcolor px-[5px]  lg:px-[60px] py-[30px] pb-[40px] ">
+        <div className="px-[30px] flex flex-col lg:flex-row w-[100%] gap-4 ">
           <div className="flex flex-col w-[100%] lg:w-[12rem] gap-2">
             <p className="text-medium font-bold  text-white ">Trusted by innovative companies of all sizes:</p>
             <div className=" flex items-center gap-2 hover:gap-4 transition-all duration-200 ease-in-out ">

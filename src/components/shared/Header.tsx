@@ -182,7 +182,6 @@ const Header = ({ islandingpage }: HeaderProps) => {
   return (
     <>
       <header className={` ${islandingpage ? "border-2 border-backgroundcolor" : "border-none"} w-full relative flex  flex-col ${islandingpage ? "border-2 h-[100vh] " : "h-[90vh]"} `}>
-
         {/* // Landing Page Video  */}
         {
           islandingpage ? (
@@ -193,7 +192,7 @@ const Header = ({ islandingpage }: HeaderProps) => {
         }
 
         {/* Navbar  */}
-        <nav className={` ${isMobile ? "px-[20px]" : "px-[60px]"} ${sticky ? "nav-sticky " : "relative"} w-full h-[76px] ${islandingpage ? "hover:bg-white text-white hover:text-black " : "text-black bg-white"}   transition-all duration-200 ease-in-out`}
+        <nav className={` ${isMobile ? "px-[20px]" : "px-[30px]"} ${sticky ? "nav-sticky " : "relative"} w-full h-[76px] ${islandingpage ? "hover:bg-white text-white hover:text-black " : "text-black bg-white"}   transition-all duration-200 ease-in-out`}
           onMouseEnter={() => setNavbarHovered(true)}
           onMouseLeave={() => setNavbarHovered(false)}
         >
@@ -303,10 +302,10 @@ const Header = ({ islandingpage }: HeaderProps) => {
         {/* header Content  */}
         {
           islandingpage ? (
-            <div className={` ${isMobile ? 'flex-col px-[20px] gap-2 absolute' : 'static flex-row px-[30px] lg:px-[120px] gap-0'} w-[95%] flex justify-evenly mt-8 top-10 `}>
+            <div className={` ${isMobile ? 'flex-col px-[20px] gap-2 absolute' : 'static flex-row px-[30px] lg:px-[120px] gap-0'} w-[95%] flex justify-evenly mt-8 top-10` }>
 
               <div className={`${isMobile ? "w-[100%]" : "w-[50%]"}   flex flex-col  gap-10  `}>
-                <h1 className={`${isMobile ? "w-[300px] text-[32px] leading-10" : "w-[450px] text-[46px]  lg:text-[58px] leading-none"}    font-extrabold text-white   `}>Amplify your customer data <span className="backgroundcolor"> with AI</span></h1>
+                <h1 className={`${isMobile ? "w-[300px] text-[32px] leading-10 mt-10" : "w-[450px] text-[46px]  lg:text-[58px] leading-none"}    font-extrabold text-white   `}>Amplify your customer data <span className="backgroundcolor"> with AI</span></h1>
 
                 <p className="max-w-[450px] text-lg text-white font-medium md:font-bold">Combine real-time data quality and governance protections with AI-powered insights and predictions. Only with the mParticle Customer Data Platform.</p>
 
@@ -316,8 +315,8 @@ const Header = ({ islandingpage }: HeaderProps) => {
                 </div>
               </div>
 
-              <div className="w-[100%] md:w-[50%]  pr-20 flex items-center  ">
-                <img className="object-cover max-sm:w-[100%] max-md:w-[70%]" src="https://images.prismic.io/mparticle/8cc05031-4c74-42c5-9d2c-7fb7444dfda2_ai-unified-desktop.png?auto=compress,format" alt="hero section" loading="lazy" />
+              <div className="w-[100%] md:w-[50%]  xl:pr-20 flex items-center  xl:pl-10    ">
+                <img className="object-cover  w-[100%] sx:w-[70%] sm:w-[70%] md:w-[100%] " src="https://images.prismic.io/mparticle/8cc05031-4c74-42c5-9d2c-7fb7444dfda2_ai-unified-desktop.png?auto=compress,format" alt="hero section" loading="lazy" />
               </div>
 
             </div>
