@@ -100,16 +100,16 @@ const Drawer = ({ open, setOpen, setHovered }: DrawerProps) => {
                                         >
                                             <div className=" bg-white w-[100%] flex flex-col gap-5   ">
                                                 {elem.submenudata?.map((subelem, index) => (
-                                                    <div key={index} className="flex w-[100%] ">
+                                                    <div key={index} className="flex w-[100%]  ml-[2rem] " data-aos="fade-right" >
                                                         {elem.name && elem.name.toLowerCase() === "solution" ? (
                                                             <>
-                                                                <div className="flex flex-col w-[100%]">
+                                                                <div className="flex flex-col w-[100%]"  data-aos="fade-top" data-aos-delay={`${index * 200}`} >
                                                                     <h1 className="text-lg font-bold text-purple transition-all 0.3s ease-in-out">{subelem.title}</h1>
                                                                     <div className='flex flex-col gap-2'>
                                                                         {
                                                                             subelem.descriptionlist && subelem.descriptionlist.map((elem, index) => {
                                                                                 return (
-                                                                                    <p key={index} className="leading-5  font-medium text-sm">{elem.list}</p>
+                                                                                    <p key={index} className="leading-5  font-medium text-sm" >{elem.list}</p>
                                                                                 )
                                                                             })
                                                                         }
@@ -118,10 +118,10 @@ const Drawer = ({ open, setOpen, setHovered }: DrawerProps) => {
                                                             </>
                                                         ) : (
                                                             <>
-                                                                <div className="w-[10%] pt-[12px] text-xl text-purple">
+                                                                <div className="w-[10%] pt-[12px] text-xl text-purple"  data-aos="fade-top" data-aos-delay={`${index * 200}`}>
                                                                     {subelem.logo}
                                                                 </div>
-                                                                <div className="flex w-[90%] flex-col">
+                                                                <div className="flex w-[90%] flex-col"  data-aos="fade-top" data-aos-delay={`${index * 200}`}>
                                                                     <h1 className="text-md font-extrabold hover:text-purple transition-all 0.3s ease-in-out">{subelem.title}</h1>
                                                                     <p className="leading-5 font-medium text-sm">{subelem.description}</p>
                                                                 </div>

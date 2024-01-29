@@ -3,15 +3,14 @@ import { FaRegArrowAltCircleRight } from 'react-icons/fa';
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { LinkPathProps } from '../../interface/interface.types';
+import "../../styles/animation.css"
 
 const LinkPath = ({ pathname, name, submenu, description, submenudata, setHovered }: LinkPathProps) => {
   const [localHovered, setLocalHovered] = useState(false);
 
   const handleMouseEnter = () => {
-    setTimeout(() => {
-      setLocalHovered(true);
-      setHovered(true);
-    }, 300);
+    setLocalHovered(true);
+    setHovered(true);
 
   };
 
@@ -45,25 +44,25 @@ const LinkPath = ({ pathname, name, submenu, description, submenudata, setHovere
               {name}  {localHovered ? <MdOutlineKeyboardArrowUp className="text-lg" /> : <MdOutlineKeyboardArrowDown className="text-lg" />}
             </li>
 
+            {/* //Mega Menu  */}
             {
               localHovered ? (
-                <div className="absolute top-[80%]   w-[100%] left-0 bg-white h-[20rem] text-black px-[120px] py-[30px] flex z-2  "
+                <div className="absolute top-[80%]   w-[100%] left-0 bg-white h-[23rem] text-black px-[120px] py-[30px] flex z-2  "
                   onMouseEnter={handleContentMouseEnter}
                   onMouseLeave={handleContentMouseLeave}
                 >
-                  <div className=" flex flex-col w-[20%] items-start justify-start  p-5 gap-3">
+                  <div className=" flex flex-col w-[20%] items-start justify-start  p-5 gap-3" data-aos="fade-right-with-movement" >
                     <h1 className="text-3xl font-extrabold">{name}</h1>
                     <p className="leading-5 font-medium text-sm">{description}</p>
                   </div>
 
                   <div className='flex flex-col  w-[100%]'>
-                    <div className="grid grid-cols-3 w-[100%] px-[30px]">
+                    <div className="grid grid-cols-3 gap-5 w-[100%] px-[30px]">
                       {submenudata?.map((elem, index) => (
                         <div key={index} className="flex">
                           {name.toLowerCase() === "solution" ? (
                             <>
-
-                              <div className="flex flex-col">
+                              <div data-aos="fade-right" data-aos-delay={`${index * 200}`} className="flex flex-col mt-10">
                                 <h1 className="text-lg font-bold text-purple transition-all 0.3s ease-in-out">{elem.title}</h1>
                                 <div className='flex flex-col gap-2'>
                                   {
@@ -78,10 +77,10 @@ const LinkPath = ({ pathname, name, submenu, description, submenudata, setHovere
                             </>
                           ) : (
                             <>
-                              <div className="w-[10%] pt-[12px] text-xl text-purple">
+                              <div className="w-[10%] pt-[12px] text-xl text-purple" data-aos="fade-right" data-aos-delay={`${index * 100}`}>
                                 {elem.logo}
                               </div>
-                              <div className="flex w-[90%] flex-col">
+                              <div className="flex w-[90%] flex-col" data-aos="fade-right" data-aos-delay={`${index * 100}`}>
                                 <h1 className="text-md font-extrabold hover:text-purple transition-all 0.3s ease-in-out">{elem.title}</h1>
                                 <p className="leading-5 font-medium text-sm">{elem.description}</p>
                               </div>
@@ -97,9 +96,9 @@ const LinkPath = ({ pathname, name, submenu, description, submenudata, setHovere
                           <div className='flex flex-col'>
                             <div className='border-t-2 mt-5'></div>
                             <div className='flex flex-col gap-3 '>
-                              <p className='text-purple text-md'>FROM THE BLOG</p>
-                              <p className="text-sm font-medium hover:font-extrabold">Turn customer journey insights into action with Indicative Segment Activation →</p>
-                              <p className="text-sm font-medium hover:font-extrabold  ">AI and Data Privacy: How to ensure your AI programs are safe, responsible, and effective →</p>
+                              <p className='text-purple text-md' data-aos="fade-right" >FROM THE BLOG</p>
+                              <p className="text-sm font-medium hover:font-extrabold" data-aos="fade-right" data-aos-delay="100">Turn customer journey insights into action with Indicative Segment Activation →</p>
+                              <p className="text-sm font-medium hover:font-extrabold  " data-aos="fade-right" data-aos-delay="200">AI and Data Privacy: How to ensure your AI programs are safe, responsible, and effective →</p>
                             </div>
                           </div>
                         </>
@@ -107,7 +106,7 @@ const LinkPath = ({ pathname, name, submenu, description, submenudata, setHovere
                         <>
                           <div className='flex flex-col'>
                             <div className='border-t-2 mt-5'></div>
-                            <div className='flex gap-3 items-center'>
+                            <div className='flex gap-3 items-center' data-aos="fade-right">
                               <FaRegArrowAltCircleRight className='text-purple' />
                               <h1 className="text-md font-extrabold  ">Integrations</h1>
                             </div>
@@ -116,10 +115,6 @@ const LinkPath = ({ pathname, name, submenu, description, submenudata, setHovere
                       )
                     }
                   </div>
-
-
-
-
                 </div>
               ) : null
             }

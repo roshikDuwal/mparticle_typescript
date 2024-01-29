@@ -10,7 +10,7 @@ import { HeaderProps, NavbarItem } from "../../interface/interface.types";
 import Drawer from "./Drawer";
 import LinkPath from "./LinkPath";
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
-
+import 'aos/dist/aos.css'
 
 //Navbar List
 export const NavbarList: NavbarItem[] = [
@@ -197,7 +197,7 @@ const Header = ({ islandingpage }: HeaderProps) => {
           onMouseEnter={() => setNavbarHovered(true)}
           onMouseLeave={() => setNavbarHovered(false)}
         >
-          <div className="w-[calc(100% - 60px)] h-[100%] flex items-center justify-between xl:px-[1%]    ">
+          <div className="w-[calc(100% - 60px)] h-[100%] flex items-center justify-between xl:px-[1%] ">
 
             <div className="flex   h-[100%] items-center font-bold cursor-pointer w-[100%] justify-between xl:w-[60%]  leading-10   ">
               <Link to={"/"}>
